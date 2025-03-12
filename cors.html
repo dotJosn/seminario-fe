@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apresentação: CSRF e CORS</title>
+    <link rel="stylesheet" href="styles/cors.css">
+</head>
+<body>
+    <div class="slide">
+        <h1>CSRF e CORS</h1>
+        
+        <div class="section">
+            <h2>O que é CORS?</h2>
+            <p><span class="highlight">CORS (Cross-Origin Resource Sharing)</span> é um mecanismo de segurança que define como os recursos de um servidor podem ser acessados a partir de um domínio diferente.</p>
+            <p><strong>Problema:</strong> Sem CORS, navegadores bloqueiam requisições feitas entre diferentes origens para evitar ataques.</p>
+            <p><strong>Vulnerabilidades:</strong></p>
+            <ul>
+                <li>Se configurado incorretamente, pode permitir acessos não autorizados.</li>
+                <li>Permissões muito abertas podem expor APIs a ataques.</li>
+            </ul>
+            <p><strong>Como mitigar:</strong></p>
+            <ul>
+                <li>Definir origens específicas no servidor.</li>
+                <li>Restringir métodos e cabeçalhos permitidos.</li>
+                <li>Evitar permitir credenciais sem necessidade.</li>
+            </ul>
+            <pre><code>const cors = require('cors');
+const app = express();
+app.use(cors({ origin: 'https://meusite.com', methods: 'GET,POST' }));</code></pre>
+        </div>
+        
+        <div class="section">
+            <h2>O que é CSRF?</h2>
+            <p><span class="highlight">CSRF (Cross-Site Request Forgery)</span> é um ataque onde um usuário autenticado é induzido a realizar ações sem seu consentimento.</p>
+            <p><strong>Exemplo de Ataque:</strong></p>
+            <p>Um usuário autenticado acessa um site malicioso, que envia uma requisição para um serviço onde ele está logado, fazendo uma transferência de dinheiro sem que ele perceba.</p>
+            <p><strong>Vulnerabilidades:</strong></p>
+            <ul>
+                <li>Requisições automáticas usando a sessão autenticada do usuário.</li>
+                <li>Sites confiáveis que não validam a origem das requisições.</li>
+            </ul>
+            <p><strong>Como mitigar:</strong></p>
+            <ul>
+                <li>Utilizar tokens CSRF para validar requisições.</li>
+                <li>Verificar cabeçalhos como <code>Referer</code> e <code>Origin</code>.</li>
+                <li>Configurar cookies com a flag <code>SameSite</code>.</li>
+            </ul>
+            <pre><code>const csrf = require('csurf');
+const csrfProtection = csrf({ cookie: true });
+app.use(csrfProtection);</code></pre>
+        </div>
+    </div>
+</body>
+</html>

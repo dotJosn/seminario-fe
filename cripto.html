@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/cripto.css">
+    <script src="scripts/cripto.js" defer></script>
+    <title>Criptografia e Armazenamento Seguro</title>
+</head>
+<body>
+    <header>
+        <h1 class="title-text">Criptografia e Armazenamento Seguro</h1>
+    </header>
+
+    <main>
+        <section class="armazenamento-seguro">
+            <h2 class="sub-title-text">Armazenamento Seguro</h2>
+            <p class="text">
+                O armazenamento seguro é a prática de proteger dados armazenados em dispositivos ou na nuvem contra acessos não autorizados, vazamentos ou perdas. Ele combina técnicas como criptografia, backups e autenticação para garantir a segurança dos dados.
+            </p>
+            <div class="armazenamento-list">
+                <details id="detailsCriptografiaArmazenamento">
+                    <summary class="sub-title-text">Criptografia de Dados</summary>
+                    <p class="text">
+                        A criptografia é usada para proteger dados armazenados, como arquivos em discos rígidos ou na nuvem. Mesmo que o dispositivo seja roubado, os dados permanecem inacessíveis sem a chave de descriptografia.
+                    </p>
+                    <div class="animation">
+                        <div id="criptografia-armazenamento" class="anim">
+                            <p id="criptografia-armazenamento-txt" class="criptog-item">🔒</p>
+                        </div>
+                    </div>
+                    <div class="animation-legend">
+                        <p id="legendTextCriptografiaArmazenamento" class="text">🔒 (Dados criptografados em repouso)</p>
+                    </div>
+                </details>
+        
+                <details id="detailsBackup">
+                    <summary class="sub-title-text">Backups Criptografados</summary>
+                    <p class="text">
+                        Backups são cópias de segurança dos dados, que podem ser armazenadas em locais físicos ou na nuvem. Quando criptografados, eles garantem que os dados possam ser recuperados em caso de falhas ou ataques.
+                    </p>
+                    <div class="animation">
+                        <div id="backup" class="anim">
+                            <p id="backup-txt" class="criptog-item">💾</p>
+                        </div>
+                    </div>
+                    <div class="animation-legend">
+                        <p id="legendTextBackup" class="text">💾 (Backup seguro)</p>
+                    </div>
+                </details>
+        
+                <details id="detailsAutenticacao">
+                    <summary class="sub-title-text">Autenticação de Dois Fatores (2FA)</summary>
+                    <p class="text">
+                        A autenticação de dois fatores adiciona uma camada extra de segurança ao acesso de dados. Além da senha, é necessário um segundo fator, como um código enviado para o celular.
+                    </p>
+                    <div class="animation">
+                        <div id="autenticacao" class="anim">
+                            <p id="autenticacao-txt" class="criptog-item">🔑📱</p>
+                        </div>
+                    </div>
+                    <div class="animation-legend">
+                        <p id="legendTextAutenticacao" class="text">🔑📱 (Senha + Código no celular)</p>
+                    </div>
+                </details>
+            </div>
+        </section>
+
+        <section class="intro-text">
+            <h2 class="sub-title-text">O que é Criptografia?</h2>
+            <p class="text">
+                A criptografia é uma técnica que transforma informações em um formato ilegível, chamado de texto cifrado, para proteger dados contra acessos não autorizados. Ela é amplamente utilizada para garantir a confidencialidade, integridade e autenticidade de informações em sistemas de comunicação, transações online e armazenamento de dados.
+            </p>
+            <h3 class="sub-title-text">Benefícios da Criptografia:</h3>
+            <ul class="text">
+                <li><strong>Segurança:</strong> Protege dados sensíveis, como senhas, informações bancárias e comunicações privadas.</li>
+                <li><strong>Privacidade:</strong> Garante que apenas pessoas autorizadas possam acessar as informações.</li>
+                <li><strong>Integridade:</strong> Assegura que os dados não sejam alterados durante a transmissão ou armazenamento.</li>
+                <li><strong>Autenticidade:</strong> Verifica a origem dos dados, confirmando que foram enviados por uma fonte confiável.</li>
+            </ul>
+            <h3 class="sub-title-text">Malefícios ou Desafios da Criptografia:</h3>
+            <ul class="text">
+                <li><strong>Complexidade:</strong> Pode ser difícil de implementar e gerenciar, especialmente para usuários comuns.</li>
+                <li><strong>Desempenho:</strong> Processos de criptografia e descriptografia podem consumir recursos computacionais, afetando a velocidade de sistemas.</li>
+                <li><strong>Uso indevido:</strong> Criminosos podem usar criptografia para esconder atividades ilegais, dificultando a investigação por autoridades.</li>
+                <li><strong>Perda de chaves:</strong> Se uma chave de criptografia for perdida, os dados podem se tornar inacessíveis permanentemente.</li>
+            </ul>
+
+            <div class="criptografia-list">
+                <details id="detailsSimetrica" aria-expanded="false">
+                    <summary class="sub-title-text">Criptografia Simétrica</summary>
+                    <p class="text">Mais rápida e eficiente, mas a mesma chave é usada para criptografar e descriptografar. Ideal para grandes volumes de dados.</p>
+                    <div class="animation">
+                        <div id="simetrica" class="anim">
+                            <p id="simetrica-txt" class="criptog-item"></p>
+                        </div>
+                    </div>
+                    <div class="animation-legend">
+                        <p id="legendTextSimetrica" class="legend-text">🔓 (Mensagem original)</p>
+                    </div>
+                </details>
+    
+                <details id="detailsAssimetrica" aria-expanded="false">
+                    <summary class="sub-title-text">Criptografia Assimétrica</summary>
+                    <p class="text">Usa chaves diferentes para criptografia e descriptografia, oferecendo uma camada extra de segurança.</p>
+                    <div class="animation">
+                        <div id="assimetrica" class="anim"> <!-- Corrigido o ID -->
+                            <p id="assimetrica-txt" class="criptog-item"></p>
+                        </div>
+                    </div>
+                    <div class="animation-legend">
+                        <p id="legendTextAssimetrica" class="legend-text">🔑🔓 (Chaves pública e privada)</p>
+                    </div>
+                </details>
+    
+                <details id="detailsRepouso" aria-expanded="false">
+                    <summary class="sub-title-text">Criptografia em Repouso</summary>
+                    <p class="text">Protege dados armazenados em discos, servidores ou nuvens.</p>
+                    <div class="animation">
+                        <div id="repouso" class="anim">
+                            <p id="repouso-txt" class="criptog-item"></p>
+                        </div>
+                    </div>
+                    <div class="animation-legend">
+                        <p id="legendTextRepouso" class="legend-text">🔒 (Dados protegidos em repouso)</p>
+                    </div>
+                </details>
+    
+                <details id="detailsTransito" aria-expanded="false">
+                    <summary class="sub-title-text">Criptografia em Trânsito</summary>
+                    <p class="text">Protege dados enquanto estão sendo transferidos entre sistemas ou durante transações online.</p>
+                    <div class="animation">
+                        <div id="transito" class="anim">
+                            <p id="transito-txt" class="criptog-item"></p>
+                        </div>
+                    </div>
+                    <div class="animation-legend">
+                        <p id="legendTextTransito" class="legend-text">🔒➡️🔒 (Dados em trânsito)</p>
+                    </div>
+                </details>
+            </div>
+
+        </section>
+    </main>
+</body>
+</html>

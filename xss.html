@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Segurança em Front-end</title>
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'"> -->
+    <link rel="stylesheet" href="styles/xss.css">
+</head>
+<body>
+    <script src="scripts/xss.js" defer></script>
+    <h1>Segurança em Front-end - XSS</h1>
+    <h2></h2>
+    <p>XSS é uma vulnerabilidade que permite que códigos JavaScript sejam executados em uma aplicação através do navegador da vítima. 
+        Ela permite o sequestro de sessão do usuário, inserção de conteúdo hostil, roubo de informações pessoais, 
+        desfigurar sites ou redirecionar os usuários para páginas maliciosas.
+    </p>
+    <p id="example">Por exemplo:</p>
+<div id="forms">
+    <div class="form">
+        <h2>Com sanitização</h2>
+    <label for="userInput">Digite algo:</label>
+    <input type="text" id="userInput">
+    <button id="submitBtn">Enviar</button>
+    <div id="output"></div>
+    </div>
+
+    <div class="form">
+        <h2>Sem sanitização</h2>
+        <label for="userInput2">Digite algo:</label>
+        <input type="text" id="userInput2">
+        <button id="submitBtn2">Enviar</button>
+        <div id="output2"></div>
+    </div>
+</div>
+    <h1>Tipos de XSS</h1>
+    <div id="types">
+        <div id="stored">
+            <h2>Stored</h2>
+            <p>Caso nossa página tivesse um banco, um script malicioso poderia ser enviado pelo formulário e executado quando
+                outro usuário entrasse na página.
+            </p>
+        </div>
+        <div id="reflected">
+            <h2>Reflected</h2>
+            <p>Caso nossa página tivesse um servidor, um script poderia ser executado imediatamente na página.
+            </p>
+        </div>
+        <div id="dom-based">
+            <h2>DOM-based</h2>
+            <p>Fora isso, nossa página também poderia ser atacada via o próprio JavaScript, através da manipulação de DOM,
+                sem passar por servidor ou banco de dados.
+            </p>
+        </div>
+    </div>
+    <h1>Meios de mitigação</h1>
+    <div id="protection">
+        <ul>
+            <li>Utilizar a Content Security Policy, que restringe as fontes dos scripts.</li>
+            <li>Determinar padrões de input (apenas números, apenas letras, sem caracteres especiais) e 
+                utilizar bibliotecas que bloqueiam scripts maliciosos, feito a DOMpurify.</li>
+            <li>Evitar o uso de innerHTML e optar pelo innerText.</li>
+            <li>Utilizar frameworks e navegadores que já venham com essas mitigações configuradas
+            (ex.: Brave e React).</li>
+        </ul>
+    </div>
+    <script src="lib/purify.min.js"></script>
+</body>
+</html>

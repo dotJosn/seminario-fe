@@ -1,0 +1,50 @@
+body { 
+  font-family: Georgia; 
+  margin: 20px; 
+  background: #e7dae4;
+}
+h1 { 
+  color: #3d3d3d; 
+}
+
+#forms {
+  display: flex;
+  gap: 300px;
+}
+
+.form {
+  padding: 20px;
+}
+
+
+input, button { 
+  margin-top: 10px; 
+  display: block; 
+  font-family: Georgia; 
+}
+#output { 
+  margin-top: 20px; 
+  padding: 10px; 
+  background: #f4f4f4; 
+  border-radius: 5px; 
+  width: 200px;
+}
+
+#example {
+  font-weight: bold;
+}
+
+#output2 { 
+  margin-top: 20px; 
+  padding: 10px; 
+  background: #f4f4f4; 
+  border-radius: 5px; 
+  width: 200px;
+}
+
+#types {
+  display: flex;
+  text-align: center;
+  gap: 30px;
+}
+  
